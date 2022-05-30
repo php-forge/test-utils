@@ -12,8 +12,8 @@ final class AssertTest extends TestCase
     public function testEqualsWithoutLE(): void
     {
         $assert = new Assert();
-        $expected = "foo\nbar";
-        $actual = "foo\r\nbar";
+        $expected = 'foo' . "\r\n" . 'bar';
+        $actual = 'foo' . "\r\n" . 'bar';
         $assert->equalsWithoutLE($expected, $actual);
     }
 }
