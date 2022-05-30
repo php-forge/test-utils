@@ -8,6 +8,9 @@ use PHPUnit\Framework\TestCase;
 
 use function str_replace;
 
+/**
+ * @psalm-suppress PropertyNotSetInConstructor
+ */
 final class Assert extends TestCase
 {
     /**
