@@ -16,4 +16,16 @@ final class AssertTest extends TestCase
         $actual = 'foo' . "\r\n" . 'bar';
         $assert->equalsWithoutLE($expected, $actual);
     }
+
+    public function testInvokeMethod(): void
+    {
+        $assert = new Assert();
+        $object = new class {
+            protected function foo(): string
+            {
+                return 'foo';
+            }
+        };
+        $this->assertSame('foo', $assert->invokeMethod($object, 'foo'));
+    }
 }
